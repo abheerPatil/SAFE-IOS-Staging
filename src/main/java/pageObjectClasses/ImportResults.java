@@ -1,7 +1,6 @@
 package pageObjectClasses;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -28,6 +27,7 @@ public class ImportResults {
 	
 	String physicianName ;
 	boolean firstRun = false;
+	boolean importedBefore = true;
 	
 	/***ELEMENTS***/
 	
@@ -49,7 +49,7 @@ public class ImportResults {
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeButton' AND visible == 1")
 	public IOSElement skipDoneBtn;
 	
-	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'Import Test Results'")
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'Import Test Results' AND visible == 1")
 	public IOSElement importResultsHeader;
 	
 	@iOSXCUITFindBy(className="XCUIElementTypeTable")
@@ -70,7 +70,7 @@ public class ImportResults {
 	@iOSXCUITFindBy(accessibility="You are authorizing SAFE to retrieve your Test Results from your provider.")
 	public IOSElement authorizingText;
 	
-	@iOSXCUITFindBy(accessibility = "IMPORT TEST RESULTS")
+	@iOSXCUITFindBy(iOSNsPredicate = "name == 'IMPORT TEST RESULTS' AND visible == 1")
 	public IOSElement importTestResults;
 	
 	@iOSXCUITFindBy(accessibility="Enter Your Address")
@@ -158,30 +158,55 @@ public class ImportResults {
 		}
 	}
 	
-	public boolean swipe(String direction , IOSElement element){
+	public boolean imported(String s){
 		try{
+			if(s.equalsIgnoreCase("N")){
+				importedBefore = false;
+			}
+			return true;
+		}
+		catch(Exception e){
+			System.out.println("Exception in method : imported - Class : ImportResults"+e);
+			return false;
+		}
+	}
+	
+	public boolean swipe(String direction , IOSElement element){
+	
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			Map<String, Object> params = new HashMap<String , Object>();
 			params.put("direction", direction);
 			params.put("element", element.getId());
 			js.executeScript("mobile: swipe", params);
 			return true;
-		}
-		catch(Exception e){
-			System.out.println("Exception in method : swipe - Class : ImportResults"+e);
-			return false;
-		}
+			
 	}
+	
+	public boolean scroll(String direction , IOSElement element){
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		Map<String, Object> params = new HashMap<String , Object>();
+		params.put("direction", direction);
+		params.put("element", element.getId());
+		js.executeScript("mobile: scroll", params);
+		return true;
+		
+}
 	
 	public boolean selectState(String state){
 		try{
+			int count = 0;
 			while(true){
 				try{
+					if(count == 10){
+						break;
+					}
 					driver.findElement(MobileBy.iOSNsPredicateString("name == '"+state+"' AND visible == 1")).click();
 					break;
 				}
 				catch(Exception e){
-					swipe("up" , stateTable);
+					count++;
+					scroll("down" , stateTable);
 				}
 			}
 			return true;
@@ -194,19 +219,9 @@ public class ImportResults {
 	
 	public boolean searchAndSelectPhysician(String physician){
 		try{
-			int count = 0;
 			physicianTextField.sendKeys(physician);
-			while(true){
-				count ++;
-				physicianTextField.sendKeys(" ");
-				List<MobileElement> ele = driver.findElements(MobileBy.className("XCUIElementTypeCell"));
-				if(ele.size() == 1){
-					break;
-				}
-				if(count == 10){
-					break;
-				}
-			}
+			physicianTextField.sendKeys(" ");
+			WaitClass.waitForElement(importResultsHeader, driver, 10000);
 			physicianName = firstRow.findElement(MobileBy.iOSClassChain("**/XCUIElementTypeStaticText[2]")).getAttribute("name");
 			firstRow.click();
 			return true;
@@ -238,7 +253,7 @@ public class ImportResults {
 	
 	public boolean enterSSN(String ssn){
 		try{
-			if(firstRun == true){
+			if(importedBefore == false){
 				WaitClass.waitForElement(ssnText, driver, 10000);
 				ssnText.isDisplayed();
 				ssnField.sendKeys(ssn);

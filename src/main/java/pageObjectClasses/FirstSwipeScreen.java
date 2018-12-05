@@ -77,13 +77,15 @@ public class FirstSwipeScreen {
 	
 	/**ACTIONS**/
 	
-	public boolean swipeLeft(){
+	public boolean swipeLeft(int till){
 		try{
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			Map<String, Object> params = new HashMap<String,Object>();
-			params.put("direction", "left");
-			params.put("element", view.getId());
-			js.executeScript("mobile: swipe", params);
+			for(int i = 0 ; i < till; i++){
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				Map<String, Object> params = new HashMap<String,Object>();
+				params.put("direction", "left");
+				params.put("element", view.getId());
+				js.executeScript("mobile: swipe", params);
+			}
 			return true;
 		}
 		catch(Exception e){

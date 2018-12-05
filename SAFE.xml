@@ -10,7 +10,7 @@
   	<classes>
   		<class name="testClasses.RegistrationTests"/> 
   		<class name="testClasses.LoginTests"/> 
-  		<class name="testClasses.InsuranceTests"/> 
+  		<class name="testClasses.InsuranceTests"/>  
   		<class name="testClasses.CreditCardTest"/> 
   		<class name="testClasses.ScheduleTestingTests"/> 
   		<class name="testClasses.ImportResultsTests"/>

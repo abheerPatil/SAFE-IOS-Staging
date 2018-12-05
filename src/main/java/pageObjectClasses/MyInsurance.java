@@ -27,7 +27,7 @@ public class MyInsurance {
 	
 	/***ELEMENTS***/
 	
-	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name =='My Insurance' AND visible == 1")
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name =='Add My Insurance' AND visible == 1")
 	public IOSElement myInsuranceHeader; 
 	
 	@iOSXCUITFindBy(accessibility="cancelArrow")
@@ -42,14 +42,32 @@ public class MyInsurance {
 	@iOSXCUITFindBy(accessibility="ADD MY INSURANCE")
 	public IOSElement addMyInsuranceBtn;
 	
-	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[1]")
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][1]")
+	public IOSElement addressField;
+	
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`]")
+	public List<IOSElement> totalTextFields;
+	
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeTextField' AND value == 'Apt/Ste (Optional)'")
+	public IOSElement streetTextField;
+	
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][2]")
 	public IOSElement findInsuranceProvider;
 	
-	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[2]")
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][3]")
+	public IOSElement findInsuranceProviderWithoutCurrent;
+	
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][3]")
 	public IOSElement insuranceId;
 	
-	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[3]")
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][4]")
+	public IOSElement insuranceIdWithourCurrent;
+	
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][4]")
 	public IOSElement groupId;
+	
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`][5]")
+	public IOSElement groupIdWithoutCurrent;
 	
 	@iOSXCUITFindBy(accessibility="What state is your insurance located?")
 	public IOSElement whatStateText;
@@ -60,7 +78,7 @@ public class MyInsurance {
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name =='Select Provider' AND visible == 1")
 	public IOSElement selectProviderText;
 	
-	@iOSXCUITFindBy(className="XCUIElementTypeTextField")
+	@iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeTextField[`visible = 1`]")
 	public IOSElement selectProviderTextField;
 	
 	@iOSXCUITFindBy(className="XCUIElementTypeCell")
@@ -90,14 +108,52 @@ public class MyInsurance {
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeTable' AND visible == 1")
 	public IOSElement stateTable;
 	
+	@iOSXCUITFindBy(accessibility="Toolbar Done Button")
+	public IOSElement toolbarDoneBtn;
+	
+	@iOSXCUITFindBy(accessibility="Done")
+	public IOSElement keyboardDoneBtn;
+	
 	
 	/***ACTIONS***/
 	
-	public boolean enterDetails(String state, String providerName, String insuranceID, String groupNum){
+	public boolean enterAddress(String address){
 		try{
+			addressField.clear();
+			addressField.sendKeys(address);
+			WaitClass.waitForElement(letsLookUpText, driver, 10000);
+			try{
+				driver.findElement(MobileBy.iOSNsPredicateString("type == 'XCUIElementTypeCell' AND visible == 1")).click();
+			}
+			catch(Exception e){
+				toolbarDoneBtn.click();
+			}
+			WaitClass.waitForElement(myInsuranceHeader, driver, 10000);
+			return true;
+		}
+		catch(Exception e){
+			System.out.println("Exception in method : enterAddress - Class : MyInsurance"+e);
+			return false;
+		}
+	}
+	
+	public boolean selectProvider(String state, String providerName){
+		try{
+			WaitClass.waitForElement(myInsuranceHeader, driver, 10000);
 			boolean a = true;
 			int count = 0;
-			selectProviderTextField.click();
+			int fields = totalTextFields.size();
+			try{
+				streetTextField.isDisplayed();
+				fields = 5;
+			}
+			catch(Exception e){}
+			if(fields == 5){
+				findInsuranceProviderWithoutCurrent.click();
+			}
+			else{
+				findInsuranceProvider.click();
+			}
 			WaitClass.waitForElement(findInsuranceProvider, driver, 10000);
 			while(a == true){
 				try{
@@ -114,35 +170,37 @@ public class MyInsurance {
 					}
 				}
 			}
-			a = true;
-			WaitClass.waitForElement(selectProviderText, driver, 10000);
 			selectProviderTextField.sendKeys(providerName);
-			while(a == true){
-				count ++;
-				selectProviderText.sendKeys(" ");
-				List<MobileElement> ele = driver.findElements(MobileBy.className("XCUIElementTypeCell"));
-				if(ele.size() == 1){
-					a = false;
-					break;
-				}
-				if(count == 10){
-					a = false;
-					break;
-				}
-			}
-			WaitClass.waitForElement(firstSearchedProvider, driver, 10000);
-			firstSearchedProvider.click();
+			selectProviderText.sendKeys(" ");
 			WaitClass.waitForElement(myInsuranceHeader, driver, 10000);
-			insuranceId.clear();
-			insuranceId.sendKeys(insuranceID);
-			groupId.clear();
-			groupId.sendKeys(groupNum);
-			try{
-				driver.findElement(MobileBy.AccessibilityId("Done")).click();
+			WaitClass.waitForElement(firstSearchedProvider, driver, 10000);
+			firstSearchedProvider.click();			
+			WaitClass.waitForElement(myInsuranceHeader, driver, 10000);
+			return true;
+		}
+		catch(Exception e){
+			System.out.println("Exception in method : selectProvider - Class : MyInsurance"+e);
+			return false;
+		}
+	}
+	
+	public boolean enterDetails(String insuranceID, String groupNum){
+		try{
+			if(totalTextFields.size() == 4){
+				insuranceId.clear();
+				insuranceId.sendKeys(insuranceID);
+				toolbarDoneBtn.click();
+				groupId.clear();
+				groupId.sendKeys(groupNum);
 			}
-			catch(Exception e){
-				confirmAndContinueBtn.click();
+			else{
+				insuranceIdWithourCurrent.clear();
+				insuranceIdWithourCurrent.sendKeys(insuranceID);
+				toolbarDoneBtn.click();
+				groupIdWithoutCurrent.clear();
+				groupIdWithoutCurrent.sendKeys(groupNum);
 			}
+			toolbarDoneBtn.click();
 			return true;
 		}
 		catch(Exception e){

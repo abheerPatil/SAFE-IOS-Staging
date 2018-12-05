@@ -29,7 +29,7 @@ public class SettingsMenu {
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeButton' AND name == 'cancelArrow'")
 	public IOSElement cancelArrow;
 	
-	@iOSXCUITFindBy(accessibility="Credit Cards")
+	@iOSXCUITFindBy(accessibility="Payment Method")
 	public IOSElement creditCardsBtn;
 	
 	@iOSXCUITFindBy(iOSNsPredicate="name == 'SIGN OUT' AND visible == 1")

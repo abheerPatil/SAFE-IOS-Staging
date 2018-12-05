@@ -49,10 +49,7 @@ public class InsuranceTests {
 				ob2.signInBtn.click();
 			}
 			WaitClass.waitForElement(ob3.header, driver, 10000);
-			ob3.menuBtn.click();
-			WaitClass.waitForElement(ob4.settingBtn, driver, 10000);
-			ob4.myInsuranceBtn.click();
-			WaitClass.waitForElement(ob5.myInsuranceHeader, driver, 10000);
+			
 		}
 		catch(Exception e){
 			System.out.println("Exception in method : beforeMethod - Class : InsuranceTests"+e);
@@ -68,6 +65,7 @@ public class InsuranceTests {
 				ob6.swipeTillElement(ob6.signOut);
 				ob6.signOut.click();
 				ob6.yes.click();
+				WaitClass.waitForElement(ob2.signInBtn, driver, 5000);
 			}
 			catch(Exception e){
 				try{
@@ -77,6 +75,7 @@ public class InsuranceTests {
 					ob6.swipeTillElement(ob6.signOut);
 					ob6.signOut.click();
 					ob6.yes.click();
+					WaitClass.waitForElement(ob2.signInBtn, driver, 5000);
 				}
 				catch(Exception g){}
 			}
@@ -88,14 +87,26 @@ public class InsuranceTests {
 	}
 	
 	@Test(dataProvider="data" , dataProviderClass = SingleDataProvider.class)
-	public void addinsurance(String one, String two, String three, String four, String state, String provider, String insuranceId, String groupNum){
+	public void addinsurance(String one, String two, String three, String four,String firstRun, String address, String state, String provider, String insuranceId, String groupNum){
 		try{
-			try{
+			WaitClass.waitForElement(ob3.header, driver, 10000);
+			ob3.menuBtn.click();
+			WaitClass.waitForElement(ob4.settingBtn, driver, 10000);
+			ob4.myInsuranceBtn.click();
+			WaitClass.waitForElement(ob5.myInsuranceHeader, driver, 10000);
+			if(firstRun.equalsIgnoreCase("Y")){
+				ob5.addMyInsuranceBtn.click();
+				WaitClass.waitForElement(ob5.myInsuranceHeader, driver, 10000);
+				ob5.enterAddress(address);
+			}
+			ob5.selectProvider(state, provider);
+			ob5.enterDetails(insuranceId, groupNum);
+			if(firstRun.equalsIgnoreCase("Y")){
 				ob5.addMyInsuranceBtn.click();
 			}
-			catch(Exception e){}
-			WaitClass.waitForElement(ob5.myInsuranceHeader, driver, 10000);
-			ob5.enterDetails(state, provider, insuranceId, groupNum);
+			else{
+				ob5.confirmAndContinueBtn.click();
+			}
 			WaitClass.waitForElement(ob5.insuranceAcceptedText, driver, 10000);
 			ob5.insuranceAcceptedText.isDisplayed();
 			ob5.continueBtn.click();

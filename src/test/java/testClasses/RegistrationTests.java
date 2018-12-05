@@ -41,17 +41,24 @@ public void beforeMethod(Object args[]){
 	ob7 = new HomeScreen(driver);
 	try{
 		if(((String) args[0]).equalsIgnoreCase("Y")){
-			 ob1.swipeLeft();
-			 ob1.swipeLeft();
-			 ob1.swipeLeft();
-			 ob1.swipeLeft();
+			int a = Integer.parseInt((String) args[1]);
+			ob1.swipeLeft(a);
+			if(a < 4){
+				if(args[2].equals("SIGN IN")){
+					ob1.signInBtn.click();
+					ob4.clickJoinNow();
+				}
+				else{
+					ob1.joinNowBtn.click();
+				}
+			}
 		}
 		else{
 			  try{
 				ob3.cancelBtn.click();
 			  }
 			  catch(Exception e){}
-			  ob4.joinNowBtn.click();
+			  ob4.clickJoinNow();
 		  }
 		WaitClass.waitForElement(ob2.firstNameField, driver, 10000);
 	}
@@ -69,6 +76,7 @@ public void afterMethod(){
 			ob5.swipeTillElement(ob5.signOut);
 			ob5.signOut.click();
 			ob5.yes.click();
+			WaitClass.waitForElement(ob2.signInBtn, driver, 2000);
 		}
 		catch(Exception e){
 			try{
@@ -78,6 +86,7 @@ public void afterMethod(){
 				ob5.swipeTillElement(ob5.signOut);
 				ob5.signOut.click();
 				ob5.yes.click();
+				WaitClass.waitForElement(ob2.signInBtn, driver, 2000);
 			}
 			catch(Exception g){}
 		}
@@ -89,10 +98,16 @@ public void afterMethod(){
 }
 
   @Test(dataProvider="data" , dataProviderClass = SingleDataProvider.class)	
-  public void register(String a, String firstName, String lastName, String email, String password, String gender, String date, String month, String year, String zip, String phone, String chanceEmail, String newEmail, String passcode) {
+  public void register(String a, String b, String c, String firstName, String lastName, String email, String password, String gender, String date, String month, String year, String zip, String phone, String changeEmail, String newEmail, String passcode, String confirmPasscode) {
 	  try{
 		  ob2.fillSignUpDetails(firstName, lastName, email, password);
-		  ob2.selectedCheckBox.isDisplayed();
+		  try{
+			  ob2.selectedCheckBox.isDisplayed();
+		  }
+		  catch(Exception e){
+			  ob2.unSelectedCheckBox.isDisplayed();
+			  ob2.unSelectedCheckBox.click();
+		  }
 		  ob2.continueBtn.click();
 		  WaitClass.waitForElement(ob2.personalInfoHeader, driver, 10000);
 		  ob2.fillPersonalDetails(gender, date, month, year, zip);
@@ -104,7 +119,7 @@ public void afterMethod(){
 		  ob2.mobileVerificationCode();
 		  ob2.continueBtn.click();
 		  WaitClass.waitForElement(ob2.verifyEmailText, driver, 10000);
-		  ob2.verifyEmail(chanceEmail, newEmail);
+		  ob2.verifyEmail(changeEmail, newEmail);
 		  ob2.verifyEmailBtn.click();
 		  ob2.getEmailVerificationCode();
 		  ob2.continueBtn.click();
@@ -112,7 +127,7 @@ public void afterMethod(){
 		  ob2.laterBtn.click();
 		  WaitClass.waitForElement(ob3.setPasscodeHeader, driver, 10000);
 		  ob3.enterPasscode(passcode);
-		  ob3.enterPasscode(passcode);
+		  ob3.enterPasscode(confirmPasscode);
 		  WaitClass.waitForElement(ob2.accountCreatedText,driver,10000);
 		  ob2.okBtn.click();
 		  WaitClass.waitForElement(ob2.welcomeDesc, driver, 10000);  	

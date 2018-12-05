@@ -247,6 +247,9 @@ public class ScheduleTestScreen {
 	@iOSXCUITFindBy(accessibility="Don't Allow")
 	public IOSElement dontAllowBtn;
 	
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'Select Facility' AND visible == 1")
+	public IOSElement selectFacilityHeader;
+	
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeTextField' AND visible == 1")
 	public IOSElement searchFacilityField;
 	
@@ -283,14 +286,20 @@ public class ScheduleTestScreen {
 	@iOSXCUITFindBy(accessibility="CANCEL")
 	public IOSElement cancelConfirmationBtn;
 	
-	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'Check Out' AND visible == 1")
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'CheckOut' AND visible == 1")
 	public IOSElement checkOutHeader;
 	
 	@iOSXCUITFindBy(accessibility="CHECK OUT")
 	public IOSElement checkOutBtn;
 	
+	@iOSXCUITFindBy(accessibility="CONFIRM ORDER")
+	public IOSElement confirmOrderBtn;
+	
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'Informed Consent' AND visible == 1")
 	public IOSElement informedConsentHeader;
+	
+	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeNavigationBar' AND name == 'HIV Consent' AND visible == 1")
+	public IOSElement hivConsentHeader;
 	
 	@iOSXCUITFindBy(className="XCUIElementTypeWebView")
 	public IOSElement view;
@@ -325,6 +334,11 @@ public class ScheduleTestScreen {
 	@iOSXCUITFindBy(accessibility="Are you pregnant ?")
 	public IOSElement isPregnantQuestion;
 	
+	@iOSXCUITFindBy(accessibility="RESCHEDULE")
+	public IOSElement rescheduleTest;
+	
+	@iOSXCUITFindBy(accessibility="CANCEL")
+	public IOSElement cancelRescheduleBtn;
 	
 	/***ACTIONS***/
 	
@@ -376,7 +390,7 @@ public class ScheduleTestScreen {
 			return false;
 		}
 	}
-	
+	/*
 	public boolean checkInsurance(boolean doneInsurance, String state, String providerName, String insuranceID, String groupNum){
 		try{
 			MyInsurance ob = new MyInsurance(driver);
@@ -396,7 +410,7 @@ public class ScheduleTestScreen {
 			return false;
 		}
 	}
-	
+	*/
 	public boolean lastTimeActive(int option){
 		try{
 			lastTimeActiveQuestion.isDisplayed();

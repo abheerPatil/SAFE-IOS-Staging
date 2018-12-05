@@ -2,18 +2,26 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
+    <listener class-name="testListeners.MethodInterceptorListner"/>
     <listener class-name="testListeners.ExtentReportingListener"/>
     <listener class-name="testListeners.RetryListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testClasses.EXAMPLE">
+      <class name="testClasses.ImportResultsTests">
         <methods>
-          <include name="one"/>
-          <include name="before"/>
-          <include name="after"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="importResults" invocation-numbers="1"/>
         </methods>
-      </class> <!-- testClasses.EXAMPLE -->
+      </class> <!-- testClasses.ImportResultsTests -->
+      <class name="testClasses.ScheduleTestingTests">
+        <methods>
+          <include name="scheduleTestingWithInsurance" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testClasses.ScheduleTestingTests -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

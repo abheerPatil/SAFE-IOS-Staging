@@ -1,25 +1,1210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="2" ignored="0" total="10" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="30461" started-at="2018-11-22T03:50:28Z" finished-at="2018-11-22T03:50:58Z">
+  <suite name="Suite" duration-ms="1540105" started-at="2018-12-05T10:30:52Z" finished-at="2018-12-05T10:56:32Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="30461" started-at="2018-11-22T03:50:28Z" finished-at="2018-11-22T03:50:58Z">
-      <class name="testClasses.EXAMPLE">
-        <test-method status="PASS" signature="before()[pri:0, instance:testClasses.EXAMPLE@5f2108b5]" name="before" is-config="true" duration-ms="9" started-at="2018-11-22T03:50:28Z" finished-at="2018-11-22T03:50:28Z">
+    <test name="Test" duration-ms="1540105" started-at="2018-12-05T10:30:52Z" finished-at="2018-12-05T10:56:32Z">
+      <class name="testClasses.ImportResultsTests">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="beforeMethod" is-config="true" duration-ms="21006" started-at="2018-12-05T10:52:10Z" finished-at="2018-12-05T10:52:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@12d35bc9]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- before -->
-        <test-method status="PASS" signature="test()[pri:0, instance:testClasses.EXAMPLE@5f2108b5]" name="test" duration-ms="20024" started-at="2018-11-22T03:50:28Z" finished-at="2018-11-22T03:50:48Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="importResults(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="importResults" duration-ms="103772" started-at="2018-12-05T10:52:31Z" data-provider="data" finished-at="2018-12-05T10:54:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[henry c walther]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3913 Don Tomaso Dr, Los Angeles, CA 90008]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[222222222]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.EXAMPLE@5f2108b5]" name="afterMethod" is-config="true" duration-ms="10005" started-at="2018-11-22T03:50:48Z" finished-at="2018-11-22T03:50:58Z">
+        </test-method> <!-- importResults -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="afterMethod" is-config="true" duration-ms="28359" started-at="2018-12-05T10:54:15Z" finished-at="2018-12-05T10:54:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testClasses.EXAMPLE -->
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="beforeMethod" is-config="true" duration-ms="32578" started-at="2018-12-05T10:54:43Z" finished-at="2018-12-05T10:55:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@1df32c09]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="importResults(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="importResults" duration-ms="54262" started-at="2018-12-05T10:55:16Z" data-provider="data" finished-at="2018-12-05T10:56:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[henry c walther]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3913 Don Tomaso Dr, Los Angeles, CA 90008]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[222222222]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:568)
+at org.testng.Assert.assertEquals(Assert.java:578)
+at testClasses.ImportResultsTests.importResults(ImportResultsTests.java:129)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- importResults -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ImportResultsTests@370736d9]" name="afterMethod" is-config="true" duration-ms="21855" started-at="2018-12-05T10:56:11Z" finished-at="2018-12-05T10:56:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.ImportResultsTests -->
+      <class name="testClasses.RegistrationTests">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.RegistrationTests@4e9ba398]" name="beforeMethod" is-config="true" duration-ms="58545" started-at="2018-12-05T10:30:55Z" finished-at="2018-12-05T10:31:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@52035328]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="register(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.RegistrationTests@4e9ba398]" name="register" duration-ms="190067" started-at="2018-12-05T10:31:53Z" data-provider="data" finished-at="2018-12-05T10:35:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Lauren]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Weiniger]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Female]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[14]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[July]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[1983]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[90008]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2111111113]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.RegistrationTests@4e9ba398]" name="afterMethod" is-config="true" duration-ms="27002" started-at="2018-12-05T10:35:03Z" finished-at="2018-12-05T10:35:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.RegistrationTests -->
+      <class name="testClasses.LoginTests">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.LoginTests@6d7b4f4c]" name="beforeMethod" is-config="true" duration-ms="7351" started-at="2018-12-05T10:35:31Z" finished-at="2018-12-05T10:35:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@5614ae05]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="positiveLoginWithEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.LoginTests@6d7b4f4c]" name="positiveLoginWithEmail" duration-ms="21836" started-at="2018-12-05T10:35:38Z" data-provider="data" finished-at="2018-12-05T10:36:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Lauren ]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Weiniger]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- positiveLoginWithEmail -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.LoginTests@6d7b4f4c]" name="afterMethod" is-config="true" duration-ms="29558" started-at="2018-12-05T10:36:00Z" finished-at="2018-12-05T10:36:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.LoginTests -->
+      <class name="testClasses.ScheduleTestingTests">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="beforeMethod" is-config="true" duration-ms="21886" started-at="2018-12-05T10:41:13Z" finished-at="2018-12-05T10:41:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@54970127]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="scheduleTestingWithInsurance(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="scheduleTestingWithInsurance" duration-ms="68690" started-at="2018-12-05T10:41:35Z" data-provider="data" finished-at="2018-12-05T10:42:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:568)
+at org.testng.Assert.assertEquals(Assert.java:578)
+at testClasses.ScheduleTestingTests.scheduleTestingWithInsurance(ScheduleTestingTests.java:270)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scheduleTestingWithInsurance -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="afterMethod" is-config="true" duration-ms="25516" started-at="2018-12-05T10:42:44Z" finished-at="2018-12-05T10:43:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="beforeMethod" is-config="true" duration-ms="20678" started-at="2018-12-05T10:43:10Z" finished-at="2018-12-05T10:43:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@3c4c7e51]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="scheduleTestingWithInsurance(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="scheduleTestingWithInsurance" duration-ms="293862" started-at="2018-12-05T10:43:30Z" data-provider="data" finished-at="2018-12-05T10:48:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[December 2018]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[8:00 AM]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scheduleTestingWithInsurance -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="afterMethod" is-config="true" duration-ms="26978" started-at="2018-12-05T10:48:24Z" finished-at="2018-12-05T10:48:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="beforeMethod" is-config="true" duration-ms="25999" started-at="2018-12-05T10:48:51Z" finished-at="2018-12-05T10:49:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@749ee0e3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="scheduleTestingWithInsurance(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="scheduleTestingWithInsurance" duration-ms="88597" started-at="2018-12-05T10:49:17Z" data-provider="data" finished-at="2018-12-05T10:50:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[RESCHEDULE]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[December 2018]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[8:30 AM]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scheduleTestingWithInsurance -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="afterMethod" is-config="true" duration-ms="27722" started-at="2018-12-05T10:50:46Z" finished-at="2018-12-05T10:51:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="beforeMethod" is-config="true" duration-ms="20699" started-at="2018-12-05T10:51:13Z" finished-at="2018-12-05T10:51:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@7891cf3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="scheduleTestingWithInsurance(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="scheduleTestingWithInsurance" duration-ms="7882" started-at="2018-12-05T10:51:34Z" data-provider="data" finished-at="2018-12-05T10:51:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[CANCEL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[N]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[nA]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[nA]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[NA]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scheduleTestingWithInsurance -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.ScheduleTestingTests@3108bc]" name="afterMethod" is-config="true" duration-ms="27799" started-at="2018-12-05T10:51:42Z" finished-at="2018-12-05T10:52:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.ScheduleTestingTests -->
+      <class name="testClasses.InsuranceTests">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.InsuranceTests@527740a2]" name="beforeMethod" is-config="true" duration-ms="20718" started-at="2018-12-05T10:36:30Z" finished-at="2018-12-05T10:36:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@6bfbab1c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="addinsurance(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.InsuranceTests@527740a2]" name="addinsurance" duration-ms="107250" started-at="2018-12-05T10:36:51Z" data-provider="data" finished-at="2018-12-05T10:38:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[4154 Lockland Pl,Los Angeles, CA 90008]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[California]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Blue Shield of California]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[xed905681405]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[x0001004]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addinsurance -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.InsuranceTests@527740a2]" name="afterMethod" is-config="true" duration-ms="28296" started-at="2018-12-05T10:38:38Z" finished-at="2018-12-05T10:39:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.InsuranceTests -->
+      <class name="testClasses.CreditCardTest">
+        <test-method status="PASS" signature="beforeMethod([Ljava.lang.Object;)[pri:0, instance:testClasses.CreditCardTest@13a5fe33]" name="beforeMethod" is-config="true" duration-ms="28488" started-at="2018-12-05T10:39:06Z" finished-at="2018-12-05T10:39:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@349aeec4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="addCreditCard(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testClasses.CreditCardTest@13a5fe33]" name="addCreditCard" duration-ms="73634" started-at="2018-12-05T10:39:35Z" data-provider="data" finished-at="2018-12-05T10:40:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1234]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lauren.weiniger.19847@yopmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Qwerty123@]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Y]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[4154 Lockland Pl,Los Angeles, CA 90008]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[378282246310005]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[0822]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[4844]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Lauren Weinier]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCreditCard -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testClasses.CreditCardTest@13a5fe33]" name="afterMethod" is-config="true" duration-ms="24069" started-at="2018-12-05T10:40:49Z" finished-at="2018-12-05T10:41:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.CreditCardTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

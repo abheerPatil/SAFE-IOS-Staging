@@ -36,7 +36,7 @@ public class LoginScreen {
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeButton' AND name == 'FORGOT PASSWORD' AND visible == 1")
 	public IOSElement forgotPasswordLink;
 	
-	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeButton' AND name == 'Join Now' AND visible == 1")
+	@iOSXCUITFindBy(iOSNsPredicate="name CONTAINS 'Sign Up'")
 	public IOSElement joinNowBtn;
 	
 	@iOSXCUITFindBy(iOSNsPredicate="type == 'XCUIElementTypeButton' AND name == 'SIGN IN' AND visible == 1")
@@ -54,6 +54,24 @@ public class LoginScreen {
 			emailTextField.sendKeys(email);
 			passwordField.sendKeys(password);
 			ac.tap(PointOption.point(100, 50)).perform();
+			return true;
+		}
+		catch(Exception e){
+			System.out.println("Exception in method : login - Class : LoginScreens"+e);
+			return false;
+		}
+	}
+	
+	public boolean clickJoinNow(){
+		try{
+			int x = joinNowBtn.getRect().getX();
+			int y = joinNowBtn.getRect().getY();
+			int width = joinNowBtn.getRect().getWidth();
+			int height = joinNowBtn.getRect().getHeight();
+			x = x + ((2*width)/3);
+			y = y + (height/2);
+			IOSTouchAction ac = new IOSTouchAction(driver);
+			ac.tap(PointOption.point(x, y)).perform();
 			return true;
 		}
 		catch(Exception e){

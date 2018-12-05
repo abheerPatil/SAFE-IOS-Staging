@@ -31,7 +31,7 @@ IOSDriver<MobileElement> driver;
 	
 	public boolean checkName(String first , String last){
 		try{
-			driver.findElement(MobileBy.iOSNsPredicateString("name == '"+first+" "+last+"'"));
+			driver.findElement(MobileBy.iOSNsPredicateString("name CONTAINS '"+first+""+last+"'"));
 			return true;
 		}
 		catch(Exception e){

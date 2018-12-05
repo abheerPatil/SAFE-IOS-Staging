@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseClass.DriverClass;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
 import pageObjectClasses.HomeScreen;
@@ -49,10 +50,6 @@ public class ImportResultsTests {
 				ob2.signInBtn.click();
 			}
 			WaitClass.waitForElement(ob3.header, driver, 10000);
-			ob3.menuBtn.click();
-			WaitClass.waitForElement(ob4.importresultsBtn, driver, 10000);
-			ob4.importresultsBtn.click();
-			WaitClass.waitForElement(ob5.importResultsHeader, driver, 10000);
 		}
 		catch(Exception e){
 			System.out.println("Exception in method : beforeMethod - Class : ImportResultsTests"+e);
@@ -68,6 +65,7 @@ public class ImportResultsTests {
 				ob6.swipeTillElement(ob6.signOut);
 				ob6.signOut.click();
 				ob6.yes.click();
+				WaitClass.waitForElement(ob2.signInBtn, driver,5000);
 			}
 			catch(Exception e){
 					try{
@@ -77,6 +75,7 @@ public class ImportResultsTests {
 						ob6.swipeTillElement(ob6.signOut);
 						ob6.signOut.click();
 						ob6.yes.click();
+						WaitClass.waitForElement(ob2.signInBtn, driver, 5000);
 					}
 					catch(Exception g){}
 				}
@@ -88,14 +87,20 @@ public class ImportResultsTests {
 	}	
 	
 	@Test(dataProvider="data" ,  dataProviderClass = SingleDataProvider.class)
-	public void importResults(String a, String b, String c, String d, String firstRun, String swipes, String state, String physician, String address, String ssn){
+	public void importResults(String a, String b, String c, String d, String importedBefore,String firstRun, String swipes, String state, String physician, String address, String ssn){
 		try{
-			int s = 0;
-			try{
-				 s = Integer.parseInt(swipes);
+			WaitClass.waitForElement(ob3.header, driver, 10000);
+			ob3.menuBtn.click();
+			WaitClass.waitForElement(ob4.importresultsBtn, driver, 10000);
+			ob4.importresultsBtn.click();
+			WaitClass.waitForElement(ob5.importResultsHeader, driver, 10000);
+			if(firstRun.equalsIgnoreCase("Y")){
+				int s = 0;
+				s = Integer.parseInt(swipes);
+				boolean re = ob5.isFirstRun(firstRun, s);
+				Assert.assertEquals(re, true);
 			}
-			catch(Exception e){}
-			ob5.isFirstRun(firstRun, s);
+			ob5.imported(importedBefore);
 			WaitClass.waitForElement(ob5.importResultsHeader, driver, 10000);
 			ob5.selectState(state);
 			ob5.searchAndSelectPhysician(physician);
@@ -107,6 +112,10 @@ public class ImportResultsTests {
 			ob5.hipaaConsent.isDisplayed();
 			ob5.swipeContents();
 			ob5.iAgreeBtn.click();
+			try{
+				driver.findElement(MobileBy.AccessibilityId("Don't Allow")).click();
+			}
+			catch(Exception e){}
 			WaitClass.waitForElement(ob5.eSignature, driver, 10000);
 			ob5.signature();
 			ob5.doneBtn.click();

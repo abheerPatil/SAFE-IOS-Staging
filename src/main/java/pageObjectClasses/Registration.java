@@ -21,10 +21,12 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 public class Registration {
 
 IOSDriver<MobileElement> driver;
+public WebDriver driver1;
 String direction;
 public String email;
 public String name;
-	
+public String mobile;
+
 	public Registration(IOSDriver<MobileElement> driver){
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
@@ -223,8 +225,19 @@ public String name;
 	
 	public boolean addPhoneNumber(String phone){
 		try{
+			long a;
+			if(mobile != null){
+				a = Long.parseLong(phone);
+				if(mobile.equals(phone)){
+					a = a + 23;
+					mobile = ""+a;
+				}
+			}
+			else{
+				this.mobile = phone;
+			}
 			textField.click();
-			textField.sendKeys(phone);
+			textField.sendKeys(mobile);
 			authenticateDeviceText.click();
 			return true;
 		}
@@ -269,9 +282,12 @@ public String name;
 	public boolean getEmailVerificationCode(){
 		try{
 			ChromeDriverManager.getInstance().setup();
-			WebDriver driver1 = new ChromeDriver();
+			driver1  = new ChromeDriver();
 			driver1.get("http://www.yopmail.com/en/"+email);
 			Thread.sleep(5000);
+			driver1.switchTo().frame(driver1.findElement(By.xpath("//iframe[@class = 'whc' and @id = 'ifinbox']")));
+			driver1.findElement(By.xpath("//span[text() = 'SAFE Care Team']")).click();
+			driver1.switchTo().defaultContent();
 			driver1.switchTo().frame(driver1.findElement(By.xpath("//iframe[@class = 'whc' and @id = 'ifmail']")));
 			String s = driver1.findElement(By.xpath("//span[contains(text() ,  'Verification Code:')]/following::span/span")).getText();
 			driver1.close();

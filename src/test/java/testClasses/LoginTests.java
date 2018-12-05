@@ -9,6 +9,7 @@ import baseClass.DriverClass;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.ios.IOSDriver;
+import pageObjectClasses.FirstSwipeScreen;
 import pageObjectClasses.HomeScreen;
 import pageObjectClasses.LoginScreen;
 import pageObjectClasses.Menu;
@@ -30,6 +31,7 @@ public class LoginTests {
 	Registration ob4;
 	SettingsMenu ob5;
 	Menu ob6;
+	FirstSwipeScreen ob7;
 
 	
 	@BeforeMethod
@@ -41,17 +43,8 @@ public class LoginTests {
 		ob4 = new Registration(driver);
 		ob5 = new SettingsMenu(driver);
 		ob6 = new Menu(driver);
+		ob7 = new FirstSwipeScreen(driver);
 		try{
-			if(((String) args[0]).equalsIgnoreCase("Y")){
-				newApp = true;
-				try{
-					ob4.signInBtn.click();
-				}
-				catch(Exception f){}
-			}
-			if(((String) args[1]).equalsIgnoreCase("Y")){
-				newLogin = true;
-			}
 		}
 		catch(Exception e){
 			System.out.println("Exception in method : beforeMethod - Class : LoginTests"+e);
@@ -67,6 +60,7 @@ public class LoginTests {
 				ob5.swipeTillElement(ob5.signOut);
 				ob5.signOut.click();
 				ob5.yes.click();
+				WaitClass.waitForElement(ob1.signInBtn, driver, 5000);
 			}catch(Exception e){}
 			driver.quit();
 		}
@@ -76,8 +70,18 @@ public class LoginTests {
 	}
 	
 	@Test(dataProvider="data" , dataProviderClass= SingleDataProvider.class)
-	public void positiveLoginWithEmail(String newAppRun, String newLoginRun, String email, String password, String passcode, String firstName, String lastName){
+	public void positiveLoginWithEmail(String newAppRun,String swipes, String newLoginRun, String email, String password, String passcode, String firstName, String lastName){
 		try{
+			if(newAppRun.equalsIgnoreCase("Y")){
+				int s = Integer.parseInt(swipes);
+				if(s<3){
+					ob7.swipeLeft(s);
+					ob7.signInBtn.click();
+				}
+				else{
+					ob4.signInBtn.click();
+				}
+			}
 			if(newApp == false){
 				try{
 					ob3.cancelBtn.click();
