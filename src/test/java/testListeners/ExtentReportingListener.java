@@ -78,7 +78,8 @@ public class ExtentReportingListener implements ITestListener{
 	 public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 	 }
 	 public void onStart(ITestContext context) {
-		 htmlReporter = new ExtentHtmlReporter("ExtentReport/"+new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date())+" report.html");
+		 //htmlReporter = new ExtentHtmlReporter("ExtentReport/"+new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date())+" report.html");
+		 htmlReporter = new ExtentHtmlReporter("ExtentReport/report.html");
 		 extent = new ExtentReports ();
 		 extent.attachReporter(htmlReporter);
 		 extent.setSystemInfo("Host Name", "MAC OS");
