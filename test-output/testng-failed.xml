@@ -8,20 +8,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testClasses.ImportResultsTests">
+      <class name="testClasses.RegistrationTests">
         <methods>
           <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="importResults" invocation-numbers="1"/>
-        </methods>
-      </class> <!-- testClasses.ImportResultsTests -->
-      <class name="testClasses.ScheduleTestingTests">
-        <methods>
-          <include name="scheduleTestingWithInsurance" invocation-numbers="0"/>
-          <include name="beforeMethod"/>
+          <include name="register" invocation-numbers="0"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- testClasses.ScheduleTestingTests -->
+      </class> <!-- testClasses.RegistrationTests -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
