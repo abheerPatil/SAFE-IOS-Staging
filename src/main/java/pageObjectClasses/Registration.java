@@ -282,15 +282,25 @@ public String mobile;
 		try{
 			//ChromeDriverManager.getInstance().setup();
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver");
+			System.out.println("0");
 			driver1  = new ChromeDriver();
+			System.out.println("1");
 			driver1.get("http://www.yopmail.com/en/"+email);
+			System.out.println("2");
 			Thread.sleep(5000);
+			System.out.println("3");
 			driver1.switchTo().frame(driver1.findElement(By.xpath("//iframe[@class = 'whc' and @id = 'ifinbox']")));
+			System.out.println("4");
 			driver1.findElement(By.xpath("//span[text() = 'SAFE Care Team']")).click();
+			System.out.println("5");
 			driver1.switchTo().defaultContent();
+			System.out.println("6");
 			driver1.switchTo().frame(driver1.findElement(By.xpath("//iframe[@class = 'whc' and @id = 'ifmail']")));
+			System.out.println("7");
 			String s = driver1.findElement(By.xpath("//span[contains(text() ,  'Verification Code:')]/following::span/span")).getText();
+			System.out.println("8");
 			driver1.close();
+			System.out.println("9");
 			for(int i = 0 ; i < s.length() ; i++){
 				driver.findElement(MobileBy.iOSNsPredicateString("type == 'XCUIElementTypeKey' AND name == '"+s.charAt(i)+"'")).click();
 			}
