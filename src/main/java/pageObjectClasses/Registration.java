@@ -281,7 +281,8 @@ public String mobile;
 	
 	public boolean getEmailVerificationCode(){
 		try{
-			ChromeDriverManager.getInstance().setup();
+			//ChromeDriverManager.getInstance().setup();
+			System.getProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver");
 			driver1  = new ChromeDriver();
 			driver1.get("http://www.yopmail.com/en/"+email);
 			Thread.sleep(5000);
