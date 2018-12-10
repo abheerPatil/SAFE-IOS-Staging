@@ -16,7 +16,6 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 
 public class Registration {
 
@@ -282,7 +281,7 @@ public String mobile;
 	public boolean getEmailVerificationCode(){
 		try{
 			//ChromeDriverManager.getInstance().setup();
-			System.getProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/Drivers/chromedriver");
 			driver1  = new ChromeDriver();
 			driver1.get("http://www.yopmail.com/en/"+email);
 			Thread.sleep(5000);
