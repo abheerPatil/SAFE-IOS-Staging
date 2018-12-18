@@ -54,7 +54,7 @@ public class ScheduleTestingTests {
 				ob2.login((String)args[2],(String) args[3]);
 				ob2.signInBtn.click();
 			}
-			WaitClass.waitForElement(ob3.header, driver, 10000);
+			WaitClass.waitForElement(ob3.header, driver, 20000);
 			
 		}
 		catch(Exception e){
@@ -95,12 +95,12 @@ public class ScheduleTestingTests {
 	public void scheduleTestingWithInsurance(String a, String b, String c, String d,String scheduledBefore,String option, String firstrun, String importedBefore,String swipes,String state, String quesA, String quesB, String quesC, String quesD, String quesE, String quesF, String quesG, String quesH, String quesI,
 			String quesJ, String quesK, String quesP, String quesL, String tests, String faciltiy, String monthAndYear, String date, String time){
 		try{
-			WaitClass.waitForElement(ob3.header, driver, 10000);
+			WaitClass.waitForElement(ob3.header, driver, 20000);
 			ob3.menuBtn.click();
-			WaitClass.waitForElement(ob4.scheduleTestingBtn, driver, 10000);
+			WaitClass.waitForElement(ob4.scheduleTestingBtn, driver, 20000);
 			ob4.scheduleTestingBtn.click();
 			if(scheduledBefore.equalsIgnoreCase("N")){
-				WaitClass.waitForElement(ob5.getTestedHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.getTestedHeader, driver, 20000);
 				int integerFormat , firstQues, lastQues;
 				if(importedBefore.equalsIgnoreCase("N")&&(firstrun.equalsIgnoreCase("Y"))){
 					int s = 0;
@@ -109,11 +109,11 @@ public class ScheduleTestingTests {
 					Assert.assertEquals(re, true);
 				}
 				try{
-					WaitClass.waitForElement(ob5.getTestedHeader, driver, 10000);
+					WaitClass.waitForElement(ob5.getTestedHeader, driver, 20000);
 					ob5.getTestedHeader.isDisplayed();
 					ob7.selectState(state);
 				}catch(Exception e){}
-				WaitClass.waitForElement(ob5.healthExamHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.healthExamHeader, driver, 20000);
 				ob5.beginConsultBtn.click();
 				ob5.lastTimeActiveQuestion.isDisplayed();
 				integerFormat = Integer.parseInt(quesA);
@@ -166,7 +166,7 @@ public class ScheduleTestingTests {
 				lastQues = integerFormat;
 				ob5.injectedIlleaglDrug(integerFormat);	
 				if(((firstQues == 1)||(firstQues == 2)) || ((firstQues == 3) && (lastQues == 1))){	
-				WaitClass.waitForElement(ob5.syphilisCheckBox, driver, 10000);
+				WaitClass.waitForElement(ob5.syphilisCheckBox, driver, 20000);
 				ob5.scheduleTesting(1);
 				ob5.scheduleTesting(3);
 				ob5.scheduleTesting(4);
@@ -178,7 +178,7 @@ public class ScheduleTestingTests {
 					ob5.scheduleTesting(x);
 				}
 				ob5.scheduleTestingBtn.click();
-				WaitClass.waitForElement(ob5.selectFacilityHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.selectFacilityHeader, driver, 20000);
 				try{
 					ob5.dontAllowBtn.click();
 				}
@@ -187,34 +187,34 @@ public class ScheduleTestingTests {
 				ob5.searchBtn.click();
 				WaitClass.waitForElement(ob5.illegalDrugsQuestion, driver, 8000);
 				ob5.firstSearch.click();
-				WaitClass.waitForElement(ob5.bookFacilityBtn, driver, 10000);
+				WaitClass.waitForElement(ob5.bookFacilityBtn, driver, 20000);
 				ob5.getFacility();
 				ob5.bookFacilityBtn.click();
-				WaitClass.waitForElement(ob5.scheduleApptHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.scheduleApptHeader, driver, 20000);
 				ob5.getToMonthAndYear(monthAndYear);
 				ob5.clickDate(date);
 				ob5.selectTime(time);
 				ob5.continueBtn.click();
-				WaitClass.waitForElement(ob5.confirmationText, driver, 10000);
+				WaitClass.waitForElement(ob5.confirmationText, driver, 20000);
 				ob5.confirmBtn.click();
-				WaitClass.waitForElement(ob5.getTestedHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.getTestedHeader, driver, 20000);
 				ob5.withInsurance(true);
-				WaitClass.waitForElement(ob6.myInsuranceHeader, driver, 10000);
+				WaitClass.waitForElement(ob6.myInsuranceHeader, driver, 20000);
 				ob6.confirmAndContinueBtn.click();
-				WaitClass.waitForElement(ob6.insuranceAcceptedText, driver, 10000);
+				WaitClass.waitForElement(ob6.insuranceAcceptedText, driver, 20000);
 				ob6.continueBtn.click();
-				WaitClass.waitForElement(ob5.checkOutHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.checkOutHeader, driver, 20000);
 				ob5.confirmOrderBtn.click();
-				WaitClass.waitForElement(ob5.informedConsentHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.informedConsentHeader, driver, 20000);
 				ob5.swipeContents();
 				ob5.iAgreeBtn.click();
-				WaitClass.waitForElement(ob7.hipaaConsent, driver, 10000);
+				WaitClass.waitForElement(ob7.hipaaConsent, driver, 20000);
 				ob7.swipeContents();
 				ob7.iAgreeBtn.click();
-				WaitClass.waitForElement(ob5.hivConsentHeader, driver, 10000);
+				WaitClass.waitForElement(ob5.hivConsentHeader, driver, 20000);
 				ob5.swipeContents();
 				ob5.iAgreeBtn.click();
-				WaitClass.waitForElement(ob7.eSignature, driver, 10000);
+				WaitClass.waitForElement(ob7.eSignature, driver, 20000);
 				try{
 					ob5.dontAllowBtn.click();
 				}
@@ -222,21 +222,21 @@ public class ScheduleTestingTests {
 				ob7.signature();
 				ob7.doneBtn.click();
 				ob7.spinner.isDisplayed();
-				WaitClass.waitForElement(ob5.appointmentConfirmedText, driver, 10000);
+				WaitClass.waitForElement(ob5.appointmentConfirmedText, driver, 20000);
 				ob5.noThanksBtn.click();
 				}
 				else{
-					WaitClass.waitForElement(ob5.noNeedText, driver, 10000);
+					WaitClass.waitForElement(ob5.noNeedText, driver, 20000);
 					ob5.noNeedText.isDisplayed();
 					ob5.crossBtn.click();
-					WaitClass.waitForElement(ob5.yesBtn, driver, 10000);
+					WaitClass.waitForElement(ob5.yesBtn, driver, 20000);
 					ob5.yesBtn.click();
 				}
 			}	
 			else if((scheduledBefore.equalsIgnoreCase("Y"))&&(option.equals("RESCHEDULE"))){
-					WaitClass.waitForElement(ob5.rescheduleTest, driver, 10000);
+					WaitClass.waitForElement(ob5.rescheduleTest, driver, 20000);
 					ob5.rescheduleTest.click();
-					WaitClass.waitForElement(ob5.selectFacilityHeader, driver, 10000);
+					WaitClass.waitForElement(ob5.selectFacilityHeader, driver, 20000);
 					try{
 						ob5.dontAllowBtn.click();
 					}
@@ -245,22 +245,22 @@ public class ScheduleTestingTests {
 					ob5.searchBtn.click();
 					WaitClass.waitForElement(ob5.illegalDrugsQuestion, driver, 8000);
 					ob5.firstSearch.click();
-					WaitClass.waitForElement(ob5.bookFacilityBtn, driver, 10000);
+					WaitClass.waitForElement(ob5.bookFacilityBtn, driver, 20000);
 					ob5.getFacility();
 					ob5.bookFacilityBtn.click();
-					WaitClass.waitForElement(ob5.scheduleApptHeader, driver, 10000);
+					WaitClass.waitForElement(ob5.scheduleApptHeader, driver, 20000);
 					ob5.getToMonthAndYear(monthAndYear);
 					ob5.clickDate(date);
 					ob5.selectTime(time);
 					ob5.continueBtn.click();
-					WaitClass.waitForElement(ob5.confirmationText, driver, 10000);
+					WaitClass.waitForElement(ob5.confirmationText, driver, 20000);
 					ob5.confirmBtn.click();
 					ob7.spinner.isDisplayed();
-					WaitClass.waitForElement(ob5.appointmentConfirmedText, driver, 10000);
+					WaitClass.waitForElement(ob5.appointmentConfirmedText, driver, 20000);
 					ob5.noThanksBtn.click();
 				}
 			else{
-				WaitClass.waitForElement(ob5.cancelRescheduleBtn, driver, 10000);
+				WaitClass.waitForElement(ob5.cancelRescheduleBtn, driver, 20000);
 				ob5.cancelRescheduleBtn.click();
 			}
 			boolean res = ob3.header.isDisplayed();
